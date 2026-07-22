@@ -1,0 +1,317 @@
+<!DOCTYPE html>
+<html lang="sr-Latn">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Kursevi i paketi — Auto Škola Beograd</title>
+<meta name="description" content="Pregledajte sve kurseve i pakete Auto Škole: standardni i ubrzani kurs za B kategoriju, vikend paketi, kondicioni časovi i dodatne usluge.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<script src="https://cdn.tailwindcss.com"></script>
+<script>
+  tailwind.config = {
+    theme: {
+      extend: {
+        colors: {
+          primary: { DEFAULT: '#3B82F6', dark: '#2563EB' },
+          secondary: { DEFAULT: '#10B981', dark: '#059669' },
+          accent: { DEFAULT: '#F59E0B', dark: '#D97706' },
+          muted: '#F3F4F6',
+          borderc: '#E5E7EB',
+          fg: '#111827'
+        },
+        fontFamily: { sans: ['Outfit', 'sans-serif'] }
+      }
+    }
+  }
+</script>
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body class="bg-white text-fg">
+
+<!-- ================= NAV ================= -->
+<header class="sticky top-0 z-50 bg-white border-b-2 border-borderc">
+  <div class="container-xl flex items-center justify-between h-20">
+    <a href="index.html" class="flex items-center gap-2.5">
+      <span class="icon-circle bg-primary text-white h-10 w-10"><i data-lucide="car-front" class="h-5 w-5"></i></span>
+      <span class="text-xl font-extrabold tracking-tight">Auto Škola</span>
+    </a>
+    <nav class="hidden md:flex items-center gap-8">
+      <a href="index.html" class="nav-link">Početna</a>
+      <a href="o-nama.html" class="nav-link">O nama</a>
+      <a href="usluge.html" class="nav-link">Usluge</a>
+      <a href="kursevi.html" class="nav-link active">Kursevi</a>
+      <a href="kontakt.html" class="nav-link">Kontakt</a>
+    </nav>
+    <div class="hidden md:flex items-center gap-4">
+      <a href="tel:+381601234567" class="nav-link text-sm font-semibold flex items-center gap-1.5">
+        <i data-lucide="phone" class="h-4 w-4"></i> 060 123 4567
+      </a>
+      <a href="kontakt.html" class="btn btn-primary btn-sm">Zakaži čas</a>
+    </div>
+    <button id="menuBtn" class="md:hidden h-11 w-11 flex items-center justify-center rounded-md hover:bg-muted">
+      <i data-lucide="menu" class="h-6 w-6"></i>
+    </button>
+  </div>
+  <div id="mobileMenu" class="mobile-menu md:hidden border-t-2 border-borderc bg-white">
+    <div class="container-xl py-4 flex flex-col gap-1">
+      <a href="index.html" class="py-3 font-medium">Početna</a>
+      <a href="o-nama.html" class="py-3 font-medium">O nama</a>
+      <a href="usluge.html" class="py-3 font-medium">Usluge</a>
+      <a href="kursevi.html" class="py-3 font-medium text-primary">Kursevi</a>
+      <a href="kontakt.html" class="py-3 font-medium">Kontakt</a>
+      <a href="kontakt.html" class="btn btn-primary btn-md mt-2 w-full">Zakaži čas</a>
+    </div>
+  </div>
+</header>
+
+<!-- ================= PAGE HERO ================= -->
+<section class="relative bg-fg overflow-hidden py-16 md:py-20">
+  <div class="shape shape-circle bg-white/5 h-80 w-80 -top-20 -right-20"></div>
+  <div class="container-xl relative z-10">
+    <span class="text-white/60 text-sm font-bold label-caps">Kursevi i paketi</span>
+    <h1 class="mt-3 text-3xl md:text-5xl font-extrabold text-white leading-tight max-w-2xl">
+      Izaberite kurs koji odgovara vašem tempu
+    </h1>
+    <p class="mt-4 text-white/70 max-w-xl">Filtrirajte po tipu i pronađite paket koji se uklapa u vaše vreme i budžet.</p>
+  </div>
+</section>
+
+<!-- ================= FILTER BAR ================= -->
+<section class="bg-white border-b-2 border-borderc sticky top-20 z-40 py-5">
+  <div class="container-xl flex flex-wrap gap-3" id="filterBar">
+    <button class="filter-pill active" data-filter="sve">Sve</button>
+    <button class="filter-pill" data-filter="kursevi">Kursevi</button>
+    <button class="filter-pill" data-filter="paketi">Paketi</button>
+    <button class="filter-pill" data-filter="dodatne">Dodatne usluge</button>
+  </div>
+</section>
+
+<!-- ================= CARD GRID ================= -->
+<section class="bg-white py-14 md:py-20">
+  <div class="container-xl">
+    <div id="cardGrid" class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+
+      <div class="card card-hover bg-muted overflow-hidden flex flex-col" data-cat="kursevi">
+        <div class="aspect-[4/3] overflow-hidden">
+          <img src="images/keys.jpg" alt="Polaznica sa ključevima nakon položenog ispita" class="w-full h-full object-cover">
+        </div>
+        <div class="p-6 flex flex-col flex-1">
+          <span class="text-xs font-bold label-caps text-primary">Kurs</span>
+          <h3 class="mt-2 font-bold text-lg">Standardni kurs B kategorije</h3>
+          <p class="mt-2 text-fg/70 text-sm flex-1">Teorija i praktična vožnja u tempu koji vam odgovara, uz istog instruktora od početka do kraja.</p>
+          <div class="mt-5 flex items-center justify-between">
+            <span class="font-extrabold text-lg">od 68.000 RSD</span>
+            <a href="kontakt.html" class="btn btn-primary btn-sm">Zakaži</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="card card-hover bg-muted overflow-hidden flex flex-col" data-cat="kursevi">
+        <div class="aspect-[4/3] overflow-hidden">
+          <img src="https://images.unsplash.com/photo-1753939579966-ec2a2f9ce46f?w=1200&q=75&auto=format&fit=crop" alt="Vožnja u gradskom saobraćaju" class="w-full h-full object-cover">
+        </div>
+        <div class="p-6 flex flex-col flex-1">
+          <span class="text-xs font-bold label-caps text-primary">Kurs</span>
+          <h3 class="mt-2 font-bold text-lg">Ubrzani kurs</h3>
+          <p class="mt-2 text-fg/70 text-sm flex-1">Intenzivan raspored za polaznike kojima je dozvola hitno potrebna — bez skraćivanja programa.</p>
+          <div class="mt-5 flex items-center justify-between">
+            <span class="font-extrabold text-lg">od 82.000 RSD</span>
+            <a href="kontakt.html" class="btn btn-primary btn-sm">Zakaži</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="card card-hover bg-muted overflow-hidden flex flex-col" data-cat="paketi">
+        <div class="aspect-[4/3] overflow-hidden">
+          <img src="images/parking.jpg" alt="Vežba parkiranja uz saobraćajne kupe" class="w-full h-full object-cover">
+        </div>
+        <div class="p-6 flex flex-col flex-1">
+          <span class="text-xs font-bold label-caps text-secondary-dark">Paket</span>
+          <h3 class="mt-2 font-bold text-lg">Vikend paket</h3>
+          <p class="mt-2 text-fg/70 text-sm flex-1">Sve časove vožnje odrađujete subotom i nedeljom — pogodno za zaposlene polaznike.</p>
+          <div class="mt-5 flex items-center justify-between">
+            <span class="font-extrabold text-lg">od 74.000 RSD</span>
+            <a href="kontakt.html" class="btn btn-primary btn-sm">Zakaži</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="card card-hover bg-muted overflow-hidden flex flex-col" data-cat="paketi">
+        <div class="aspect-[4/3] overflow-hidden">
+          <img src="https://images.unsplash.com/photo-1649268523352-657008286fa5?w=1200&q=75&auto=format&fit=crop" alt="Vožnja sa rukom na volanu" class="w-full h-full object-cover">
+        </div>
+        <div class="p-6 flex flex-col flex-1">
+          <span class="text-xs font-bold label-caps text-secondary-dark">Paket</span>
+          <h3 class="mt-2 font-bold text-lg">Popodnevni paket za zaposlene</h3>
+          <p class="mt-2 text-fg/70 text-sm flex-1">Časovi isključivo posle 16h, sa fiksnim terminom koji se ne menja iz nedelje u nedelju.</p>
+          <div class="mt-5 flex items-center justify-between">
+            <span class="font-extrabold text-lg">od 70.000 RSD</span>
+            <a href="kontakt.html" class="btn btn-primary btn-sm">Zakaži</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="card card-hover bg-muted overflow-hidden flex flex-col" data-cat="dodatne">
+        <div class="aspect-[4/3] overflow-hidden">
+          <img src="images/lesson-1.jpg" alt="Instruktor prati polaznicu tokom časa vožnje" class="w-full h-full object-cover">
+        </div>
+        <div class="p-6 flex flex-col flex-1">
+          <span class="text-xs font-bold label-caps text-accent-dark">Dodatna usluga</span>
+          <h3 class="mt-2 font-bold text-lg">Kondicioni čas (pojedinačno)</h3>
+          <p class="mt-2 text-fg/70 text-sm flex-1">Jedan čas vožnje po izboru — savršeno za osveženje znanja pred ispit ili nakon pauze.</p>
+          <div class="mt-5 flex items-center justify-between">
+            <span class="font-extrabold text-lg">6.000 RSD</span>
+            <a href="kontakt.html" class="btn btn-primary btn-sm">Zakaži</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="card card-hover bg-muted overflow-hidden flex flex-col" data-cat="dodatne">
+        <div class="aspect-[4/3] overflow-hidden">
+          <img src="https://images.unsplash.com/photo-1671198514584-5aaa823bae4e?w=1200&q=75&auto=format&fit=crop" alt="Prazan auto-put u sumrak" class="w-full h-full object-cover">
+        </div>
+        <div class="p-6 flex flex-col flex-1">
+          <span class="text-xs font-bold label-caps text-accent-dark">Dodatna usluga</span>
+          <h3 class="mt-2 font-bold text-lg">Vožnja na auto-putu i noću</h3>
+          <p class="mt-2 text-fg/70 text-sm flex-1">Dodatni časovi fokusirani na veće brzine i vožnju po smanjenoj vidljivosti.</p>
+          <div class="mt-5 flex items-center justify-between">
+            <span class="font-extrabold text-lg">7.500 RSD</span>
+            <a href="kontakt.html" class="btn btn-primary btn-sm">Zakaži</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="card card-hover bg-muted overflow-hidden flex flex-col" data-cat="dodatne">
+        <div class="aspect-[4/3] overflow-hidden">
+          <img src="images/checklist.jpg" alt="Instruktor beleži napredak polaznika na kontrolnoj listi" class="w-full h-full object-cover">
+        </div>
+        <div class="p-6 flex flex-col flex-1">
+          <span class="text-xs font-bold label-caps text-accent-dark">Dodatna usluga</span>
+          <h3 class="mt-2 font-bold text-lg">Automatik → manuelni menjač</h3>
+          <p class="mt-2 text-fg/70 text-sm flex-1">Kratak, ciljan program za prelazak sa automatskog na manuelni menjač — kvačilo, brzine, uzbrdice.</p>
+          <div class="mt-5 flex items-center justify-between">
+            <span class="font-extrabold text-lg">od 18.000 RSD</span>
+            <a href="kontakt.html" class="btn btn-primary btn-sm">Zakaži</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="card card-hover bg-muted overflow-hidden flex flex-col" data-cat="dodatne">
+        <div class="aspect-[4/3] overflow-hidden">
+          <img src="images/hero.jpg" alt="Polaznica sa L oznakom pokazuje znak da je sve u redu" class="w-full h-full object-cover">
+        </div>
+        <div class="p-6 flex flex-col flex-1">
+          <span class="text-xs font-bold label-caps text-accent-dark">Dodatna usluga</span>
+          <h3 class="mt-2 font-bold text-lg">Obnavljanje gradiva i test pitanja</h3>
+          <p class="mt-2 text-fg/70 text-sm flex-1">Vežbanje test pitanja iz saobraćajnih propisa uz mentora, sa fokusom na oblasti gde najčešće grešite.</p>
+          <div class="mt-5 flex items-center justify-between">
+            <span class="font-extrabold text-lg">4.500 RSD</span>
+            <a href="kontakt.html" class="btn btn-primary btn-sm">Zakaži</a>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+    <p id="emptyState" class="hidden text-center text-fg/60 py-16">Nema kurseva u ovoj kategoriji trenutno.</p>
+  </div>
+</section>
+
+<!-- ================= CTA ================= -->
+<section class="relative bg-accent overflow-hidden py-20 md:py-24">
+  <div class="shape shape-circle bg-white/15 h-64 w-64 -top-16 -right-10"></div>
+  <div class="shape shape-square bg-white/15 h-32 w-32 rotate-12 -bottom-10 left-[6%]"></div>
+  <div class="container-xl relative z-10 text-center">
+    <h2 class="text-3xl md:text-5xl font-extrabold text-fg leading-tight max-w-3xl mx-auto">Niste sigurni koji paket vam odgovara?</h2>
+    <p class="mt-5 text-fg/80 text-lg max-w-xl mx-auto">Pozovite nas ili zakažite besplatan uvodni čas — zajedno biramo najbolju opciju.</p>
+    <div class="mt-8 flex flex-wrap gap-4 justify-center">
+      <a href="kontakt.html" class="btn btn-accent btn-lg">
+        <i data-lucide="calendar-check" class="h-5 w-5"></i> Zakaži besplatan čas
+      </a>
+      <a href="tel:+381601234567" class="btn btn-outline btn-lg">
+        <i data-lucide="phone" class="h-5 w-5"></i> 060 123 4567
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- ================= FOOTER ================= -->
+<footer class="relative bg-fg text-white pt-16 pb-8 overflow-hidden">
+  <div class="shape shape-circle bg-white/5 h-72 w-72 -bottom-24 -right-16"></div>
+  <div class="container-xl relative z-10 grid sm:grid-cols-2 md:grid-cols-4 gap-10">
+    <div>
+      <a href="index.html" class="flex items-center gap-2.5">
+        <span class="icon-circle bg-primary text-white h-9 w-9"><i data-lucide="car-front" class="h-4 w-4"></i></span>
+        <span class="text-lg font-extrabold">Auto Škola</span>
+      </a>
+      <p class="mt-4 text-white/60 text-sm">Licencirana auto škola u Beogradu — obuka za B kategoriju od 2013. godine.</p>
+      <div class="mt-5 flex gap-3">
+        <a href="#" aria-label="Instagram" class="icon-circle bg-white/10 hover:bg-white/20 h-10 w-10 transition-colors"><i data-lucide="instagram" class="h-4 w-4"></i></a>
+        <a href="#" aria-label="Facebook" class="icon-circle bg-white/10 hover:bg-white/20 h-10 w-10 transition-colors"><i data-lucide="facebook" class="h-4 w-4"></i></a>
+        <a href="#" aria-label="YouTube" class="icon-circle bg-white/10 hover:bg-white/20 h-10 w-10 transition-colors"><i data-lucide="youtube" class="h-4 w-4"></i></a>
+      </div>
+    </div>
+    <div>
+      <p class="font-bold label-caps text-sm text-white/50">Navigacija</p>
+      <ul class="mt-4 space-y-3 text-white/80 text-sm">
+        <li><a href="index.html" class="hover:text-white">Početna</a></li>
+        <li><a href="o-nama.html" class="hover:text-white">O nama</a></li>
+        <li><a href="usluge.html" class="hover:text-white">Usluge</a></li>
+        <li><a href="kursevi.html" class="hover:text-white">Kursevi</a></li>
+        <li><a href="kontakt.html" class="hover:text-white">Kontakt</a></li>
+      </ul>
+    </div>
+    <div>
+      <p class="font-bold label-caps text-sm text-white/50">Usluge</p>
+      <ul class="mt-4 space-y-3 text-white/80 text-sm">
+        <li><a href="usluge.html" class="hover:text-white">Kurs za B kategoriju</a></li>
+        <li><a href="usluge.html" class="hover:text-white">Kondicioni časovi</a></li>
+        <li><a href="usluge.html" class="hover:text-white">Ubrzani kurs</a></li>
+        <li><a href="usluge.html" class="hover:text-white">Priprema za ispit</a></li>
+      </ul>
+    </div>
+    <div>
+      <p class="font-bold label-caps text-sm text-white/50">Kontakt</p>
+      <ul class="mt-4 space-y-3 text-white/80 text-sm">
+        <li class="flex items-start gap-2"><i data-lucide="map-pin" class="h-4 w-4 mt-0.5 flex-shrink-0"></i> Bulevar Zorana Đinđića 45, Novi Beograd</li>
+        <li class="flex items-center gap-2"><i data-lucide="phone" class="h-4 w-4 flex-shrink-0"></i> 060 123 4567</li>
+        <li class="flex items-center gap-2"><i data-lucide="mail" class="h-4 w-4 flex-shrink-0"></i> info@autoskola.rs</li>
+      </ul>
+    </div>
+  </div>
+  <div class="container-xl relative z-10 mt-12 pt-8 border-t-2 border-white/10 flex flex-col md:flex-row justify-between gap-3 text-sm text-white/50">
+    <p>&copy; 2026 Auto Škola Beograd. Sva prava zadržana.</p>
+    <p>PIB 123456789 · MB 987654321</p>
+  </div>
+</footer>
+
+<script src="https://unpkg.com/lucide@latest/dist/umd/lucide.js"></script>
+<script>
+  lucide.createIcons();
+  document.getElementById('menuBtn')?.addEventListener('click', () => {
+    document.getElementById('mobileMenu').classList.toggle('open');
+  });
+
+  const pills = document.querySelectorAll('.filter-pill');
+  const cards = document.querySelectorAll('#cardGrid > [data-cat]');
+  const emptyState = document.getElementById('emptyState');
+
+  pills.forEach(pill => {
+    pill.addEventListener('click', () => {
+      pills.forEach(p => p.classList.remove('active'));
+      pill.classList.add('active');
+      const filter = pill.dataset.filter;
+      let visibleCount = 0;
+      cards.forEach(card => {
+        const show = filter === 'sve' || card.dataset.cat === filter;
+        card.style.display = show ? '' : 'none';
+        if (show) visibleCount++;
+      });
+      emptyState.classList.toggle('hidden', visibleCount !== 0);
+    });
+  });
+</script>
+</body>
+</html>

@@ -1,0 +1,340 @@
+<!DOCTYPE html>
+<html lang="sr-Latn">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Auto Škola Beograd — Položite vozački iz prve | B kategorija</title>
+<meta name="description" content="Auto škola u Beogradu za polaganje vozačkog ispita B kategorije. Licencirani instruktori, moderna vozila sa duplom komandom, fleksibilan raspored. Zakažite besplatan uvodni čas.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<script src="https://cdn.tailwindcss.com"></script>
+<script>
+  tailwind.config = {
+    theme: {
+      extend: {
+        colors: {
+          primary: { DEFAULT: '#3B82F6', dark: '#2563EB' },
+          secondary: { DEFAULT: '#10B981', dark: '#059669' },
+          accent: { DEFAULT: '#F59E0B', dark: '#D97706' },
+          muted: '#F3F4F6',
+          borderc: '#E5E7EB',
+          fg: '#111827'
+        },
+        fontFamily: { sans: ['Outfit', 'sans-serif'] }
+      }
+    }
+  }
+</script>
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body class="bg-white text-fg">
+
+<!-- ================= NAV ================= -->
+<header class="sticky top-0 z-50 bg-white border-b-2 border-borderc">
+  <div class="container-xl flex items-center justify-between h-20">
+    <a href="index.html" class="flex items-center gap-2.5">
+      <span class="icon-circle bg-primary text-white h-10 w-10"><i data-lucide="car-front" class="h-5 w-5"></i></span>
+      <span class="text-xl font-extrabold tracking-tight">Auto Škola</span>
+    </a>
+    <nav class="hidden md:flex items-center gap-8">
+      <a href="index.html" class="nav-link active">Početna</a>
+      <a href="o-nama.html" class="nav-link">O nama</a>
+      <a href="usluge.html" class="nav-link">Usluge</a>
+      <a href="kursevi.html" class="nav-link">Kursevi</a>
+      <a href="kontakt.html" class="nav-link">Kontakt</a>
+    </nav>
+    <div class="hidden md:flex items-center gap-4">
+      <a href="tel:+381601234567" class="nav-link text-sm font-semibold flex items-center gap-1.5">
+        <i data-lucide="phone" class="h-4 w-4"></i> 060 123 4567
+      </a>
+      <a href="kontakt.html" class="btn btn-primary btn-sm">Zakaži čas</a>
+    </div>
+    <button id="menuBtn" class="md:hidden h-11 w-11 flex items-center justify-center rounded-md hover:bg-muted">
+      <i data-lucide="menu" class="h-6 w-6"></i>
+    </button>
+  </div>
+  <div id="mobileMenu" class="mobile-menu md:hidden border-t-2 border-borderc bg-white">
+    <div class="container-xl py-4 flex flex-col gap-1">
+      <a href="index.html" class="py-3 font-medium text-primary">Početna</a>
+      <a href="o-nama.html" class="py-3 font-medium">O nama</a>
+      <a href="usluge.html" class="py-3 font-medium">Usluge</a>
+      <a href="kursevi.html" class="py-3 font-medium">Kursevi</a>
+      <a href="kontakt.html" class="py-3 font-medium">Kontakt</a>
+      <a href="kontakt.html" class="btn btn-primary btn-md mt-2 w-full">Zakaži čas</a>
+    </div>
+  </div>
+</header>
+
+<!-- ================= HERO ================= -->
+<section class="relative bg-primary overflow-hidden">
+  <div class="shape shape-circle bg-white/10 h-[26rem] w-[26rem] -top-24 -right-24"></div>
+  <div class="shape shape-square bg-white/10 h-40 w-40 rotate-12 bottom-10 left-[8%]"></div>
+  <div class="shape shape-circle bg-secondary/30 h-16 w-16 bottom-24 right-[18%] float-slow"></div>
+
+  <div class="container-xl relative z-10 grid md:grid-cols-2 gap-12 items-center py-16 md:py-24">
+    <div>
+      <span class="inline-flex items-center gap-2 bg-white/15 text-white text-xs font-semibold label-caps px-4 py-2 rounded-md">
+        <i data-lucide="badge-check" class="h-4 w-4"></i> Auto škola Beograd · B kategorija
+      </span>
+      <h1 class="mt-6 text-white text-4xl md:text-5xl lg:text-6xl font-extrabold leading-[1.05]">
+        Sednite za volan.<br>Mi vodimo računa o ostalom.
+      </h1>
+      <p class="mt-6 text-white/90 text-lg max-w-lg">
+        Kompletna obuka za vozačku dozvolu B kategorije — od prvog časa do izlaska na saobraćajni poligon. Licencirani instruktori, moderna vozila, raspored koji prati vaš dan.
+      </p>
+      <div class="mt-8 flex flex-wrap gap-4">
+        <a href="kontakt.html" class="btn btn-secondary btn-lg">
+          <i data-lucide="calendar-check" class="h-5 w-5"></i> Zakaži besplatan čas
+        </a>
+        <a href="kursevi.html" class="btn btn-outline-white btn-lg">
+          Pogledaj kurseve
+        </a>
+      </div>
+      <div class="mt-10 flex flex-wrap gap-8">
+        <div>
+          <p class="text-3xl font-extrabold text-white">500+</p>
+          <p class="text-white/70 text-sm font-medium">Položenih vozača</p>
+        </div>
+        <div>
+          <p class="text-3xl font-extrabold text-white">13</p>
+          <p class="text-white/70 text-sm font-medium">Godina iskustva</p>
+        </div>
+        <div>
+          <p class="text-3xl font-extrabold text-white">98%</p>
+          <p class="text-white/70 text-sm font-medium">Izlaznost iz prve</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="relative">
+      <div class="relative rounded-lg overflow-hidden aspect-[4/5] md:aspect-[5/6]">
+        <img src="images/hero.jpg" alt="Polaznica auto škole maše iz vozila sa L oznakom" class="w-full h-full object-cover">
+      </div>
+      <div class="absolute -bottom-6 -left-6 bg-white rounded-lg p-5 hidden sm:flex items-center gap-3 max-w-[15rem]">
+        <span class="icon-circle bg-accent/15 text-accent-dark h-12 w-12 flex-shrink-0"><i data-lucide="star" class="h-6 w-6"></i></span>
+        <div>
+          <p class="font-bold text-sm leading-tight">4.9 / 5</p>
+          <p class="text-xs text-fg/60 leading-tight">Ocena polaznika</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= TRUST STRIP ================= -->
+<section class="bg-white border-b-2 border-borderc py-8">
+  <div class="container-xl flex flex-wrap items-center justify-center md:justify-between gap-x-10 gap-y-4 text-sm font-semibold text-fg/70">
+    <span class="flex items-center gap-2"><i data-lucide="shield-check" class="h-5 w-5 text-primary"></i> Licencirana auto škola</span>
+    <span class="flex items-center gap-2"><i data-lucide="car-front" class="h-5 w-5 text-secondary"></i> Vozila sa duplom komandom</span>
+    <span class="flex items-center gap-2"><i data-lucide="calendar-clock" class="h-5 w-5 text-accent-dark"></i> Časovi 7 dana u nedelji</span>
+    <span class="flex items-center gap-2"><i data-lucide="map-pin" class="h-5 w-5 text-primary"></i> Novi Beograd i okolina</span>
+  </div>
+</section>
+
+<!-- ================= 3 KEY BENEFITS ================= -->
+<section class="relative bg-secondary overflow-hidden py-20 md:py-28">
+  <div class="shape shape-circle bg-white/10 h-72 w-72 -bottom-20 -left-16"></div>
+  <div class="shape shape-square bg-white/10 h-24 w-24 rotate-45 top-16 right-[10%]"></div>
+  <div class="container-xl relative z-10">
+    <div class="max-w-xl">
+      <span class="text-white/80 text-sm font-bold label-caps">Zašto baš mi</span>
+      <h2 class="mt-3 text-3xl md:text-4xl font-extrabold text-white leading-tight">Tri stvari koje polaznici najviše cene</h2>
+    </div>
+    <div class="mt-12 grid md:grid-cols-3 gap-6">
+      <div class="card card-hover bg-white p-8">
+        <span class="icon-circle bg-primary/10 text-primary h-14 w-14"><i data-lucide="award" class="h-7 w-7"></i></span>
+        <h3 class="mt-6 text-xl font-bold">Licencirani instruktori</h3>
+        <p class="mt-3 text-fg/70">Strpljiv, individualan pristup svakom polazniku — bez obzira da li vozite prvi put ili obnavljate znanje.</p>
+      </div>
+      <div class="card card-hover bg-white p-8">
+        <span class="icon-circle bg-secondary/10 text-secondary-dark h-14 w-14"><i data-lucide="car-front" class="h-7 w-7"></i></span>
+        <h3 class="mt-6 text-xl font-bold">Moderna vozila</h3>
+        <p class="mt-3 text-fg/70">Vozila sa duplom komandom, redovno servisirana, dostupna i sa manuelnim i sa automatskim menjačem.</p>
+      </div>
+      <div class="card card-hover bg-white p-8">
+        <span class="icon-circle bg-accent/10 text-accent-dark h-14 w-14"><i data-lucide="calendar-clock" class="h-7 w-7"></i></span>
+        <h3 class="mt-6 text-xl font-bold">Fleksibilan raspored</h3>
+        <p class="mt-3 text-fg/70">Časovi ujutru, popodne ili vikendom — termine prilagođavamo vašem poslu i obavezama.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= SERVICES PREVIEW ================= -->
+<section class="bg-white py-20 md:py-28">
+  <div class="container-xl">
+    <div class="flex flex-col md:flex-row md:items-end md:justify-between gap-6">
+      <div class="max-w-xl">
+        <span class="text-primary text-sm font-bold label-caps">Šta nudimo</span>
+        <h2 class="mt-3 text-3xl md:text-4xl font-extrabold leading-tight">Usluge prilagođene svakom polazniku</h2>
+      </div>
+      <a href="usluge.html" class="nav-link font-semibold flex items-center gap-1.5 whitespace-nowrap">
+        Sve usluge <i data-lucide="arrow-right" class="h-4 w-4"></i>
+      </a>
+    </div>
+
+    <div class="mt-12 grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
+      <a href="usluge.html" class="card card-hover group bg-muted p-7 flex flex-col">
+        <span class="icon-circle bg-white text-primary h-14 w-14"><i data-lucide="graduation-cap" class="h-7 w-7 transition-transform duration-200 group-hover:scale-110"></i></span>
+        <h3 class="mt-6 font-bold text-lg">Kurs za B kategoriju</h3>
+        <p class="mt-2 text-fg/70 text-sm flex-1">Teorijska i praktična obuka od nule do polaganja ispita.</p>
+        <span class="mt-4 text-primary font-semibold text-sm flex items-center gap-1">Detaljnije <i data-lucide="arrow-right" class="h-4 w-4"></i></span>
+      </a>
+      <a href="usluge.html" class="card card-hover group bg-muted p-7 flex flex-col">
+        <span class="icon-circle bg-white text-secondary-dark h-14 w-14"><i data-lucide="repeat" class="h-7 w-7 transition-transform duration-200 group-hover:scale-110"></i></span>
+        <h3 class="mt-6 font-bold text-lg">Kondicioni časovi</h3>
+        <p class="mt-2 text-fg/70 text-sm flex-1">Dodatna vožnja za polaznike koji žele više sigurnosti pred ispit.</p>
+        <span class="mt-4 text-primary font-semibold text-sm flex items-center gap-1">Detaljnije <i data-lucide="arrow-right" class="h-4 w-4"></i></span>
+      </a>
+      <a href="usluge.html" class="card card-hover group bg-muted p-7 flex flex-col">
+        <span class="icon-circle bg-white text-accent-dark h-14 w-14"><i data-lucide="zap" class="h-7 w-7 transition-transform duration-200 group-hover:scale-110"></i></span>
+        <h3 class="mt-6 font-bold text-lg">Ubrzani kurs</h3>
+        <p class="mt-2 text-fg/70 text-sm flex-1">Intenzivan raspored za one kojima je dozvola hitno potrebna.</p>
+        <span class="mt-4 text-primary font-semibold text-sm flex items-center gap-1">Detaljnije <i data-lucide="arrow-right" class="h-4 w-4"></i></span>
+      </a>
+      <a href="usluge.html" class="card card-hover group bg-muted p-7 flex flex-col">
+        <span class="icon-circle bg-white text-primary h-14 w-14"><i data-lucide="clipboard-check" class="h-7 w-7 transition-transform duration-200 group-hover:scale-110"></i></span>
+        <h3 class="mt-6 font-bold text-lg">Priprema za ispit</h3>
+        <p class="mt-2 text-fg/70 text-sm flex-1">Obnavljanje gradiva i vežbanje test pitanja uz mentora.</p>
+        <span class="mt-4 text-primary font-semibold text-sm flex items-center gap-1">Detaljnije <i data-lucide="arrow-right" class="h-4 w-4"></i></span>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- ================= TESTIMONIALS ================= -->
+<section class="bg-fg py-20 md:py-28">
+  <div class="container-xl">
+    <div class="max-w-xl">
+      <span class="text-white/60 text-sm font-bold label-caps">Iskustva polaznika</span>
+      <h2 class="mt-3 text-3xl md:text-4xl font-extrabold text-white leading-tight">Šta kažu naši vozači</h2>
+    </div>
+    <div class="mt-12 grid md:grid-cols-3 gap-6">
+      <div class="card bg-white/5 p-8">
+        <div class="flex gap-1 text-accent">
+          <i data-lucide="star" class="h-4 w-4 fill-current"></i><i data-lucide="star" class="h-4 w-4 fill-current"></i><i data-lucide="star" class="h-4 w-4 fill-current"></i><i data-lucide="star" class="h-4 w-4 fill-current"></i><i data-lucide="star" class="h-4 w-4 fill-current"></i>
+        </div>
+        <p class="mt-5 text-white/85">Prvi put sam sela za volan sa dvadeset i pet godina i bila sam prestravljena. Instruktor je bio strpljiv i ispit sam položila iz prve.</p>
+        <p class="mt-6 font-bold text-white">Milica J.</p>
+        <p class="text-white/50 text-sm">Položila B kategoriju</p>
+      </div>
+      <div class="card bg-white/5 p-8">
+        <div class="flex gap-1 text-accent">
+          <i data-lucide="star" class="h-4 w-4 fill-current"></i><i data-lucide="star" class="h-4 w-4 fill-current"></i><i data-lucide="star" class="h-4 w-4 fill-current"></i><i data-lucide="star" class="h-4 w-4 fill-current"></i><i data-lucide="star" class="h-4 w-4 fill-current"></i>
+        </div>
+        <p class="mt-5 text-white/85">Trebala mi je dozvola hitno zbog posla. Ubrzani kurs mi je omogućio da položim za mesec dana bez žurbe i stresa.</p>
+        <p class="mt-6 font-bold text-white">Nemanja P.</p>
+        <p class="text-white/50 text-sm">Ubrzani kurs</p>
+      </div>
+      <div class="card bg-white/5 p-8">
+        <div class="flex gap-1 text-accent">
+          <i data-lucide="star" class="h-4 w-4 fill-current"></i><i data-lucide="star" class="h-4 w-4 fill-current"></i><i data-lucide="star" class="h-4 w-4 fill-current"></i><i data-lucide="star" class="h-4 w-4 fill-current"></i><i data-lucide="star" class="h-4 w-4 fill-current"></i>
+        </div>
+        <p class="mt-5 text-white/85">Vratila sam se za volan posle deset godina pauze. Kondicioni časovi su mi vratili sigurnost pre nego što sam krenula sama.</p>
+        <p class="mt-6 font-bold text-white">Ana T.</p>
+        <p class="text-white/50 text-sm">Kondicioni časovi</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= ABOUT PREVIEW ================= -->
+<section class="bg-white py-20 md:py-28">
+  <div class="container-xl grid md:grid-cols-2 gap-12 items-center">
+    <div class="relative order-2 md:order-1">
+      <div class="rounded-lg overflow-hidden aspect-[4/3]">
+        <img src="images/checklist.jpg" alt="Instruktor beleži napredak polaznika na kontrolnoj listi" class="w-full h-full object-cover">
+      </div>
+      <div class="shape shape-circle bg-primary/10 h-28 w-28 -z-10 -bottom-8 -right-8"></div>
+    </div>
+    <div class="order-1 md:order-2">
+      <span class="text-primary text-sm font-bold label-caps">Ko smo mi</span>
+      <h2 class="mt-3 text-3xl md:text-4xl font-extrabold leading-tight">Škola koju su osnovali ljudi koji vole ovaj posao</h2>
+      <p class="mt-5 text-fg/70 text-lg">
+        Auto Škola posluje u Beogradu već 13 godina, sa jasnim ciljem: da svaki polaznik izađe na ispit siguran u svoje znanje, ne samo u sreću. Radimo sa manjim grupama i individualnim planom vožnje za svakog kandidata.
+      </p>
+      <a href="o-nama.html" class="mt-6 inline-flex btn btn-outline btn-md">
+        Upoznajte nas <i data-lucide="arrow-right" class="h-4 w-4"></i>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- ================= FINAL CTA ================= -->
+<section class="relative bg-accent overflow-hidden py-20 md:py-24">
+  <div class="shape shape-circle bg-white/15 h-64 w-64 -top-16 -right-10"></div>
+  <div class="shape shape-square bg-white/15 h-32 w-32 rotate-12 -bottom-10 left-[6%]"></div>
+  <div class="container-xl relative z-10 text-center">
+    <h2 class="text-3xl md:text-5xl font-extrabold text-fg leading-tight max-w-3xl mx-auto">Spremni da krenete putem do vozačke dozvole?</h2>
+    <p class="mt-5 text-fg/80 text-lg max-w-xl mx-auto">Zakažite besplatan uvodni čas i uverite se sami zašto nam polaznici veruju.</p>
+    <div class="mt-8 flex flex-wrap gap-4 justify-center">
+      <a href="kontakt.html" class="btn btn-accent btn-lg">
+        <i data-lucide="calendar-check" class="h-5 w-5"></i> Zakaži besplatan čas
+      </a>
+      <a href="tel:+381601234567" class="btn btn-outline btn-lg">
+        <i data-lucide="phone" class="h-5 w-5"></i> 060 123 4567
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- ================= FOOTER ================= -->
+<footer class="relative bg-fg text-white pt-16 pb-8 overflow-hidden">
+  <div class="shape shape-circle bg-white/5 h-72 w-72 -bottom-24 -right-16"></div>
+  <div class="container-xl relative z-10 grid sm:grid-cols-2 md:grid-cols-4 gap-10">
+    <div>
+      <a href="index.html" class="flex items-center gap-2.5">
+        <span class="icon-circle bg-primary text-white h-9 w-9"><i data-lucide="car-front" class="h-4 w-4"></i></span>
+        <span class="text-lg font-extrabold">Auto Škola</span>
+      </a>
+      <p class="mt-4 text-white/60 text-sm">Licencirana auto škola u Beogradu — obuka za B kategoriju od 2013. godine.</p>
+      <div class="mt-5 flex gap-3">
+        <a href="#" aria-label="Instagram" class="icon-circle bg-white/10 hover:bg-white/20 h-10 w-10 transition-colors"><i data-lucide="instagram" class="h-4 w-4"></i></a>
+        <a href="#" aria-label="Facebook" class="icon-circle bg-white/10 hover:bg-white/20 h-10 w-10 transition-colors"><i data-lucide="facebook" class="h-4 w-4"></i></a>
+        <a href="#" aria-label="YouTube" class="icon-circle bg-white/10 hover:bg-white/20 h-10 w-10 transition-colors"><i data-lucide="youtube" class="h-4 w-4"></i></a>
+      </div>
+    </div>
+    <div>
+      <p class="font-bold label-caps text-sm text-white/50">Navigacija</p>
+      <ul class="mt-4 space-y-3 text-white/80 text-sm">
+        <li><a href="index.html" class="hover:text-white">Početna</a></li>
+        <li><a href="o-nama.html" class="hover:text-white">O nama</a></li>
+        <li><a href="usluge.html" class="hover:text-white">Usluge</a></li>
+        <li><a href="kursevi.html" class="hover:text-white">Kursevi</a></li>
+        <li><a href="kontakt.html" class="hover:text-white">Kontakt</a></li>
+      </ul>
+    </div>
+    <div>
+      <p class="font-bold label-caps text-sm text-white/50">Usluge</p>
+      <ul class="mt-4 space-y-3 text-white/80 text-sm">
+        <li><a href="usluge.html" class="hover:text-white">Kurs za B kategoriju</a></li>
+        <li><a href="usluge.html" class="hover:text-white">Kondicioni časovi</a></li>
+        <li><a href="usluge.html" class="hover:text-white">Ubrzani kurs</a></li>
+        <li><a href="usluge.html" class="hover:text-white">Priprema za ispit</a></li>
+      </ul>
+    </div>
+    <div>
+      <p class="font-bold label-caps text-sm text-white/50">Kontakt</p>
+      <ul class="mt-4 space-y-3 text-white/80 text-sm">
+        <li class="flex items-start gap-2"><i data-lucide="map-pin" class="h-4 w-4 mt-0.5 flex-shrink-0"></i> Bulevar Zorana Đinđića 45, Novi Beograd</li>
+        <li class="flex items-center gap-2"><i data-lucide="phone" class="h-4 w-4 flex-shrink-0"></i> 060 123 4567</li>
+        <li class="flex items-center gap-2"><i data-lucide="mail" class="h-4 w-4 flex-shrink-0"></i> info@autoskola.rs</li>
+      </ul>
+    </div>
+  </div>
+  <div class="container-xl relative z-10 mt-12 pt-8 border-t-2 border-white/10 flex flex-col md:flex-row justify-between gap-3 text-sm text-white/50">
+    <p>&copy; 2026 Auto Škola Beograd. Sva prava zadržana.</p>
+    <p>PIB 123456789 · MB 987654321</p>
+  </div>
+</footer>
+
+<script src="https://unpkg.com/lucide@latest/dist/umd/lucide.js"></script>
+<script>
+  lucide.createIcons();
+  document.getElementById('menuBtn')?.addEventListener('click', () => {
+    document.getElementById('mobileMenu').classList.toggle('open');
+  });
+</script>
+</body>
+</html>
